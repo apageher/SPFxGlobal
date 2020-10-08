@@ -9,33 +9,23 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as strings from 'MyReactHooksWebPartStrings';
 import MyReactHooks from './components/MyReactHooks';
 import { IMyReactHooksProps } from './components/IMyReactHooksProps';
+
 export interface IMyReactHooksWebPartProps {
   description: string;
 }
-// import { sp } from "@pnp/sp";
-// import "@pnp/sp/webs";
-// import "@pnp/sp/lists";
-// import "@pnp/sp/items";
+
+import { sp } from "@pnp/sp";
+
 
 export default class MyReactHooksWebPart extends BaseClientSideWebPart<IMyReactHooksWebPartProps> {
 
-  // public onInit(): Promise<void> {
-  //   return super.onInit().then(_ => {
-  //     sp.setup({
-  //       spfxContext: this.context
-  //     });
-  //   });
-  // }
-
-  // public onInit(): Promise<void> {
-  //   return super.onInit().then((_) => {
-  //        sp.setup({
-  //             spfxContext: this.context
-  //        });
-  //        this.service = sp;
-  //   });
-//}
-
+  public onInit(): Promise<void> {
+    return super.onInit().then(_ => {
+      sp.setup({
+        spfxContext: this.context
+      });
+    });
+  }
 
   public render(): void {
     const element: React.ReactElement<IMyReactHooksProps> = React.createElement(
