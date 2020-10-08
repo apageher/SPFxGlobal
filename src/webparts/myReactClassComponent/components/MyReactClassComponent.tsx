@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { IMyReactClassComponentProps } from './IMyReactClassComponentProps';
 import PnPSPDataFromSP from './PnPSPDataFromSP/PnPSPDataFromSP';
-
+import RequestToGraph from './RequestToGraph/RequestToGraph';
 
 export default class MyReactClassComponent extends React.Component<IMyReactClassComponentProps> {
 
@@ -11,6 +11,7 @@ export default class MyReactClassComponent extends React.Component<IMyReactClass
       <>
         <h1>Class component</h1>
         <PnPSPDataFromSP description={this.props.description}></PnPSPDataFromSP>
+        <RequestToGraph msGraphClientFactory={this.props.msGraphClientFactory}></RequestToGraph>
       </>
     );
   }

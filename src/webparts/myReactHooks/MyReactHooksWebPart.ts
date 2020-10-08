@@ -16,7 +16,6 @@ export interface IMyReactHooksWebPartProps {
 
 import { sp } from "@pnp/sp";
 
-
 export default class MyReactHooksWebPart extends BaseClientSideWebPart<IMyReactHooksWebPartProps> {
 
   public onInit(): Promise<void> {
@@ -31,7 +30,8 @@ export default class MyReactHooksWebPart extends BaseClientSideWebPart<IMyReactH
     const element: React.ReactElement<IMyReactHooksProps> = React.createElement(
       MyReactHooks,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        msGraphClientFactory: this.context.msGraphClientFactory
       }
     );
     ReactDom.render(element, this.domElement);

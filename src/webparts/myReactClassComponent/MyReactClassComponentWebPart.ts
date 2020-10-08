@@ -6,7 +6,6 @@ import {
   PropertyPaneTextField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
-
 import * as strings from 'MyReactClassComponentWebPartStrings';
 import MyReactClassComponent from './components/MyReactClassComponent';
 import { IMyReactClassComponentProps } from './components/IMyReactClassComponentProps';
@@ -26,12 +25,13 @@ export default class MyReactClassComponentWebPart extends BaseClientSideWebPart<
       });
     });
   }
-
+  
   public render(): void {
     const element: React.ReactElement<IMyReactClassComponentProps> = React.createElement(
       MyReactClassComponent,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        msGraphClientFactory: this.context.msGraphClientFactory
       }
     );
 
