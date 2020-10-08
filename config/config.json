@@ -1,0 +1,27 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "my-react-hooks-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/myReactHooks/MyReactHooksWebPart.js",
+          "manifest": "./src/webparts/myReactHooks/MyReactHooksWebPart.manifest.json"
+        }
+      ]
+    },
+    "my-react-class-component-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/myReactClassComponent/MyReactClassComponentWebPart.js",
+          "manifest": "./src/webparts/myReactClassComponent/MyReactClassComponentWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "MyReactHooksWebPartStrings": "lib/webparts/myReactHooks/loc/{locale}.js",
+    "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js"
+  }
+}
