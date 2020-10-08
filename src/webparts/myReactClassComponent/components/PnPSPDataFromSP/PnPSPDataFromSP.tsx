@@ -1,13 +1,12 @@
 import * as React from 'react';
 import styles from './PnPSPDataFromSP.module.scss';
 import { IPnPSPDataFromSPProps } from './IPnPSPDataFromSPProps';
-import { escape } from '@microsoft/sp-lodash-subset';
-
+import MockDataFromSP from './MockDataFromSP';
+import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
-
 
 export interface ICountry {
     name: string;
@@ -19,7 +18,6 @@ export interface IPnPSPDataFromSPState {
 }
 
 export default class PnPSPDataFromSP extends React.Component<IPnPSPDataFromSPProps, IPnPSPDataFromSPState> {
-
 
     constructor(prop: IPnPSPDataFromSPProps) {
         super(prop);
@@ -35,21 +33,51 @@ export default class PnPSPDataFromSP extends React.Component<IPnPSPDataFromSPPro
     private iniComponent = async () => {
         try {
             let data = Array<ICountry>();
-            const items: any[] = await sp.web.lists.getByTitle("Countries").items.get();
-            items.forEach((item) => {
-                data.push({
-                    name: item.Title,
-                    continent: item.Continent
-                });
-            });
+            // Local environment
+            if (Environment.type === EnvironmentType.Local) {
+                data = await this.getMockData();
+            }
+            else if (Environment.type == EnvironmentType.SharePoint ||
+                Environment.type == EnvironmentType.ClassicSharePoint) {
+                data = await this.getData();
+            }
+
+            // SIN DATOS DE MOCK
+            // let data = Array<ICountry>();
+            // const items: any[] = await sp.web.lists.getByTitle("Countries").items.get();
+            // items.forEach((item) => {
+            //     data.push({
+            //         name: item.Title,
+            //         continent: item.Continent
+            //     });
+            // });
+
             this.setState({
                 countries: data
             });
-            console.log(this.state.countries);
         } catch (error) {
-            console.warn("######## ERROR MIO ########");
+            console.warn("%c######## ERROR ########", 'color: blue');
             console.error(error);
         }
+    }
+
+    private getMockData(): Promise<Array<ICountry>> {
+        return MockDataFromSP.getCountries()
+            .then((data: Array<ICountry>) => {
+                return data;
+            }) as Promise<Array<ICountry>>;
+    }
+
+    private async getData(): Promise<Array<ICountry>> {
+        let data = Array<ICountry>();
+        const items: any[] = await sp.web.lists.getByTitle("Countries").items.get();
+        items.forEach((item) => {
+            data.push({
+                name: item.Title,
+                continent: item.Continent
+            });
+        });
+        return data;
     }
 
     public render(): React.ReactElement<IPnPSPDataFromSPProps> {
@@ -59,9 +87,9 @@ export default class PnPSPDataFromSP extends React.Component<IPnPSPDataFromSPPro
                 <div className={styles.container}>
                     <div className={styles.row}>
                         <div className={styles.column}>
-                            <p className={styles.description}>{escape(this.props.description)}</p>
+                            <p className={styles.description}>{this.props.description}</p>
                             {countries.map((country: ICountry) => {
-                                return(<p className={styles.title}>{country.name} - {country.continent}</p>);       
+                                return (<p className={styles.title}>{country.name} - {country.continent}</p>);
                             })}
                         </div>
                     </div>
