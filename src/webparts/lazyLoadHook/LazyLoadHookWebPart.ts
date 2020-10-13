@@ -7,19 +7,19 @@ import {
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
-import * as strings from 'FluentUiControlsWebPartStrings';
-import FluentUiControls from './components/FluentUiControls';
-import { IFluentUiControlsProps } from './components/IFluentUiControlsProps';
+import * as strings from 'LazyLoadHookWebPartStrings';
+import LazyLoadHook from './components/LazyLoadHook';
+import { ILazyLoadHookProps } from './components/ILazyLoadHookProps';
 
-export interface IFluentUiControlsWebPartProps {
+export interface ILazyLoadHookWebPartProps {
   description: string;
 }
 
-export default class FluentUiControlsWebPart extends BaseClientSideWebPart<IFluentUiControlsWebPartProps> {
+export default class LazyLoadHookWebPart extends BaseClientSideWebPart<ILazyLoadHookWebPartProps> {
 
   public render(): void {
-    const element: React.ReactElement<IFluentUiControlsProps> = React.createElement(
-      FluentUiControls,
+    const element: React.ReactElement<ILazyLoadHookProps> = React.createElement(
+      LazyLoadHook,
       {
         description: this.properties.description
       }
@@ -32,9 +32,9 @@ export default class FluentUiControlsWebPart extends BaseClientSideWebPart<IFlue
     ReactDom.unmountComponentAtNode(this.domElement);
   }
 
-  // protected get dataVersion(): Version {
-  //   return Version.parse('1.0');
-  // }
+  protected get dataVersion(): Version {
+    return Version.parse('1.0');
+  }
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
     return {

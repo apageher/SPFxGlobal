@@ -11,9 +11,9 @@ const MyReactHooks: React.FC<IMyReactHooksProps> = (props) => {
   //OK Leer de SP con PnPJs (https://sanlotest.sharepoint.com/sites/LearnSPPeich) [Hooks y Clases]
   //OK Datos de prueba con Enviroment
   //OK Petición a MS Graph (con la factoria) [Hooks y Clases]
+  //OK Lazy load [Hooks y Clases]
   //Petición a MS Graph (con libreria de pnp)
   //React route (tal vez con un WP app)
-  //Lazy load (por ejemplo con componente de tabs y dentro de cada uno, un componente)
   //Jest
   //Azure function
   //Azure Devops
@@ -22,6 +22,8 @@ const MyReactHooks: React.FC<IMyReactHooksProps> = (props) => {
   //API Content (datos de las props)
   //Mirar lo del despliegue selectivo de componentes (comentar el config)
   //Lo de la mejora del tiempo del bundle y serve
+  //Usar los ficheros de idioma loc
+  //WP con super Property Pane, y con un Custom property pane control
 
   return (
     <>

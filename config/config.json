@@ -25,12 +25,21 @@
           "manifest": "./src/webparts/fluentUiControls/FluentUiControlsWebPart.manifest.json"
         }
       ]
+    },
+    "lazy-load-hook-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/lazyLoadHook/LazyLoadHookWebPart.js",
+          "manifest": "./src/webparts/lazyLoadHook/LazyLoadHookWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "MyReactHooksWebPartStrings": "lib/webparts/myReactHooks/loc/{locale}.js",
     "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js",
-    "FluentUiControlsWebPartStrings": "lib/webparts/fluentUiControls/loc/{locale}.js"
+    "FluentUiControlsWebPartStrings": "lib/webparts/fluentUiControls/loc/{locale}.js",
+    "LazyLoadHookWebPartStrings": "lib/webparts/lazyLoadHook/loc/{locale}.js"
   }
 }

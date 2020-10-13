@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/spfx/client-side-web-part-manifest.schema.json",
-  "id": "470c61ec-984f-41f0-bc61-d5ad68d76eeb",
-  "alias": "FluentUiControlsWebPart",
+  "id": "b9b87daf-c2e2-440d-8809-c08d452fb773",
+  "alias": "LazyLoadHookWebPart",
   "componentType": "WebPart",
   "version": "*",
   "manifestVersion": 2,
@@ -10,11 +10,11 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
     "group": { "default": "Other" },
-    "title": { "default": "FluentUI Controls" },
-    "description": { "default": "FluentUI Controls description" },
-    "officeFabricIconFontName": "DecisionSolid",
+    "title": { "default": "Lazy Load Hook" },
+    "description": { "default": "LazyLoadHook description" },
+    "officeFabricIconFontName": "Brush",
     "properties": {
-      "description": "FluentUI Controls"
+      "description": "LazyLoadHook"
     }
   }]
 }
