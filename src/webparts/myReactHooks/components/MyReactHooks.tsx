@@ -12,8 +12,8 @@ const MyReactHooks: React.FC<IMyReactHooksProps> = (props) => {
   //OK Datos de prueba con Enviroment
   //OK Petición a MS Graph (con la factoria) [Hooks y Clases]
   //Petición a MS Graph (con libreria de pnp)
-  //React route
-  //Lazy load
+  //React route (tal vez con un WP app)
+  //Lazy load (por ejemplo con componente de tabs y dentro de cada uno, un componente)
   //Jest
   //Azure function
   //Azure Devops

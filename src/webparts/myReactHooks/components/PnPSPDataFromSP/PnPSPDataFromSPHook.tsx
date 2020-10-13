@@ -78,8 +78,8 @@ const PnPSPDataFromSPHook: React.FC<IPnPSPDataFromSPHookProps> = (props) => {
                 <div className={styles.row}>
                     <div className={styles.column}>
                         <p className={styles.description}>{props.description}</p>
-                        {countries.map((country: ICountry) => {
-                            return (<p className={styles.title}>{country.name} - {country.continent}</p>);
+                        {countries.map((country: ICountry, index: number) => {
+                            return (<p className={styles.title} key={index}>{country.name} - {country.continent}</p>);
                         })}
                     </div>
                 </div>

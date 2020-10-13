@@ -17,11 +17,20 @@
           "manifest": "./src/webparts/myReactClassComponent/MyReactClassComponentWebPart.manifest.json"
         }
       ]
+    },
+    "fluent-ui-controls-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/fluentUiControls/FluentUiControlsWebPart.js",
+          "manifest": "./src/webparts/fluentUiControls/FluentUiControlsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
     "MyReactHooksWebPartStrings": "lib/webparts/myReactHooks/loc/{locale}.js",
-    "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js"
+    "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js",
+    "FluentUiControlsWebPartStrings": "lib/webparts/fluentUiControls/loc/{locale}.js"
   }
 }
