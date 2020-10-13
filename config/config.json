@@ -33,6 +33,14 @@
           "manifest": "./src/webparts/lazyLoadHook/LazyLoadHookWebPart.manifest.json"
         }
       ]
+    },
+    "personal-property-pane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/personalPropertyPane/PersonalPropertyPaneWebPart.js",
+          "manifest": "./src/webparts/personalPropertyPane/PersonalPropertyPaneWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -40,6 +48,7 @@
     "MyReactHooksWebPartStrings": "lib/webparts/myReactHooks/loc/{locale}.js",
     "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js",
     "FluentUiControlsWebPartStrings": "lib/webparts/fluentUiControls/loc/{locale}.js",
-    "LazyLoadHookWebPartStrings": "lib/webparts/lazyLoadHook/loc/{locale}.js"
+    "LazyLoadHookWebPartStrings": "lib/webparts/lazyLoadHook/loc/{locale}.js",
+    "PersonalPropertyPaneWebPartStrings": "lib/webparts/personalPropertyPane/loc/{locale}.js"
   }
 }
