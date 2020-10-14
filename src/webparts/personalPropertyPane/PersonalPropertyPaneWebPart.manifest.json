@@ -10,14 +10,18 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
     "group": { "default": "Other" },
-    "title": { "default": "My Property Pane" },
-    "description": { "default": "PersonalPropertyPane description" },
+    "title": { "default": "My Property Pane" , "es-ES": "Mi Property Pane"},
+    "description": { "default": "Possibilities provided by the Property Pane", "es-ES": "Posibilidades que proporciona el Property Pane"},
     "officeFabricIconFontName": "Airplane",
     "properties": {
       "adult": true,
       "age": 18,
       "layout": "Brick",
-      "shape": "Square"
+      "shape": "Square",
+      "conversationSource": "Group",
+      "searchCriteria": "",
+      "numberOfConversations": 8,
+      "toggleAllEvents": false
     }
   }]
 }
