@@ -13,7 +13,7 @@ export default class PersonalPropertyPane extends React.Component<IPersonalPrope
             <div className={styles.column}>
               <span className={styles.title}>Welcome to SharePoint!</span>
               <p className={styles.subTitle}>Customize SharePoint experiences using Web Parts.</p>
-              <p className={styles.description}>{`${strings.NameFieldLabel}: ${escape(this.props.name)}`}</p>
+              {/* <p className={styles.description}>{`${strings.NameFieldLabel}: ${escape(this.props.name)}`}</p>
               <p className={styles.description}>{`${strings.SurnameFieldLabel}: ${escape(this.props.surname)}`}</p>
               <p className={styles.description}>{`${strings.DNIFieldLabel}: ${escape(this.props.DNI)}`}</p>
               <p className={styles.description}>{`${strings.AdultFieldLabel}: ${this.props.adult}`}</p>
@@ -23,7 +23,13 @@ export default class PersonalPropertyPane extends React.Component<IPersonalPrope
               <p className={styles.description}>{`${strings.CompanyFieldLabel}: ${escape(this.props.company)}`}</p>
               <p className={styles.description}>{`${strings.AboutMeFieldLabel}: ${escape(this.props.aboutMe)}`}</p>
               <p className={styles.description}>{`${strings.Layout}: ${escape(this.props.layout)}`}</p>
-              <p className={styles.description}>{`${strings.Shape}: ${escape(this.props.shape)}`}</p>
+              <p className={styles.description}>{`${strings.Shape}: ${escape(this.props.shape)}`}</p> */}
+
+              <p className={styles.description}>{`${strings.HtmlCodeLabel}: ${this.props.htmlCode}`}</p>
+              <p className={styles.description}>{`${strings.CollectionDataLabel}: ${this.props.collectionData}`}</p>
+              <p className={styles.description}>{`${strings.ColorLabel}: ${escape(this.props.color)}`}</p>
+              <p className={styles.description}>{`${strings.DateTimeLabel}: ${this.props.datetime}`}</p>
+              <p className={styles.description}>{`${strings.MultiSelectLabel}: ${this.props.multiSelect}`}</p>
               <a href="https://aka.ms/spfx" className={styles.button}>
                 <span className={styles.label}>Learn more</span>
               </a>

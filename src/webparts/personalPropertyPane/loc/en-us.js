@@ -56,5 +56,11 @@ define([], function () {
     "BtnCompoundButtonDescripcion": 'With some descriptive text',
     "BtnIconButton": "Icon button ('AddFriend' icon)",
     "ErrorValidationString": "Value must be more than 3 characters!",
+    "PnPPropertyControlsDescription": "Examples of PnP controls for the Property Pane",
+    "HtmlCodeLabel": "Code",
+    "CollectionDataLabel": "DataCollection",
+    "ColorLabel": "Selected color",
+    "DateTimeLabel": "Selected date time",
+    "MultiSelectLabel": "MultiSelect",
   }
 });

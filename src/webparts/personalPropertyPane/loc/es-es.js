@@ -55,6 +55,12 @@ define([], function () {
     "BtnCompoundButton": "Botón compound",
     "BtnCompoundButtonDescripcion": "Con algo de texto descriptivo",
     "BtnIconButton": "Botón icono ('AddFriend' icono)",
-    "ErrorValidationString": "El valor debe de tener al menos 3 caracteres"
+    "ErrorValidationString": "El valor debe de tener al menos 3 caracteres",
+    "PnPPropertyControlsDescription": "Ejemplos de controles de PnP para el Property Pane",
+    "HtmlCodeLabel": "Código",
+    "CollectionDataLabel": "Colección de datos",
+    "ColorLabel": "Color elegido",
+    "DateTimeLabel": "Fecha elegida",
+    "MultiSelectLabel": "MultiSelect",
   }
 });

@@ -22,11 +22,24 @@ import {
   IPropertyPaneToggleProps,
   IPropertyPaneField
 } from '@microsoft/sp-property-pane';
+
+import { PropertyFieldCodeEditor, PropertyFieldCodeEditorLanguages } from '@pnp/spfx-property-controls/lib/PropertyFieldCodeEditor';
+import { PropertyFieldCollectionData, CustomCollectionFieldType } from '@pnp/spfx-property-controls/lib/PropertyFieldCollectionData';
+import { PropertyFieldColorPicker, PropertyFieldColorPickerStyle } from '@pnp/spfx-property-controls/lib/PropertyFieldColorPicker';
+import { PropertyFieldDateTimePicker, DateConvention, TimeConvention } from '@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker';
+import { IDateTimeFieldValue } from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+import { PropertyFieldMessage } from '@pnp/spfx-property-controls/lib/PropertyFieldMessage';
+import { PropertyFieldMultiSelect } from '@pnp/spfx-property-controls/lib/PropertyFieldMultiSelect';
+import { PropertyPaneWebPartInformation } from '@pnp/spfx-property-controls/lib/PropertyPaneWebPartInformation';
+
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 
 import * as strings from 'PersonalPropertyPaneWebPartStrings';
 import PersonalPropertyPane from './components/PersonalPropertyPane';
 import { IPersonalPropertyPaneProps } from './components/IPersonalPropertyPaneProps';
+import { DayOfWeek, MessageBarType } from 'office-ui-fabric-react';
+
+
 
 
 export interface IPersonalPropertyPaneWebPartProps {
@@ -54,36 +67,20 @@ export interface IPersonalPropertyPaneWebPartProps {
   textoTest: string;
   toggleAllEvents: boolean;
 
-  headerType:string;
+  headerType: string;
   title: string;
   subTitle?: string;
   enabled?: boolean;
   descriptionCustom?: string;
+
+  //Propiedades de los controles de PnP
+  htmlCode: string;
+  collectionData: any[];
+  color: string;
+  datetime: IDateTimeFieldValue;
+  multiSelect: string[];
+  toggleInfoHeaderValue: boolean;
 }
-
-//OK Añadir todos los tipos de propiedades
-//OK Usar validaciones
-//Añadir propiedades de PnP https://pnp.github.io/sp-dev-fx-property-controls
-//OK Usar fichero LOC
-//Crear un componente personalizado
-//OK Nombre del WP dependiendo del idioma
-
-// OK Choice group
-// OK Choice group de iconos
-// OK Choice group de imagenes
-// OK Dropdown
-// OK Label
-// OK Link
-// OK Slider
-// OK Textbox
-// OK Toggle
-// OK Horizontal rule
-// OK Multi-line Textbox
-// OK Button
-// OK Condicionales
-// Custom
-// Opciones del PropertyPaneChoiceGroup dinamicas (carga de lista o items de SP) https://docs.microsoft.com/es-es/sharepoint/dev/spfx/web-parts/guidance/use-cascading-dropdowns-in-web-part-properties
-
 
 export default class PersonalPropertyPaneWebPart extends BaseClientSideWebPart<IPersonalPropertyPaneWebPartProps> {
 
@@ -138,6 +135,11 @@ export default class PersonalPropertyPaneWebPart extends BaseClientSideWebPart<I
         aboutMe: this.properties.aboutMe,
         layout: this.properties.layout,
         shape: this.properties.shape,
+        htmlCode:this.properties.htmlCode,
+        collectionData: this.properties.collectionData,
+        color: this.properties.color,
+        datetime: this.properties.datetime,
+        multiSelect: this.properties.multiSelect
       }
     );
 
@@ -542,6 +544,145 @@ export default class PersonalPropertyPaneWebPart extends BaseClientSideWebPart<I
                   buttonType: PropertyPaneButtonType.Icon,
                   icon: 'AddFriend',
                   onClick: this.WPPropButtonClick
+                })
+              ]
+            }
+          ]
+        },
+        {
+          header: {
+            description: strings.PnPPropertyControlsDescription,
+          },
+          displayGroupsAsAccordion: false,
+          groups: [
+            {
+              groupFields: [
+                PropertyFieldCodeEditor('htmlCode', {
+                  label: 'Edit HTML Code',
+                  panelTitle: 'Edit HTML Code',
+                  initialValue: this.properties.htmlCode,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  key: 'codeEditorFieldId',
+                  language: PropertyFieldCodeEditorLanguages.HTML
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyFieldCollectionData("collectionData", {
+                  key: "collectionData",
+                  label: "Collection data",
+                  panelHeader: "Collection data panel header",
+                  manageBtnLabel: "Manage collection data",
+                  value: this.properties.collectionData,
+                  fields: [
+                    {
+                      id: "Title",
+                      title: "Firstname",
+                      type: CustomCollectionFieldType.string,
+                      required: true
+                    },
+                    {
+                      id: "Lastname",
+                      title: "Lastname",
+                      type: CustomCollectionFieldType.string
+                    },
+                    {
+                      id: "Age",
+                      title: "Age",
+                      type: CustomCollectionFieldType.number,
+                      required: true
+                    },
+                    {
+                      id: "City",
+                      title: "Favorite city",
+                      type: CustomCollectionFieldType.dropdown,
+                      options: [
+                        {
+                          key: "antwerp",
+                          text: "Antwerp"
+                        },
+                        {
+                          key: "helsinki",
+                          text: "Helsinki"
+                        },
+                        {
+                          key: "montreal",
+                          text: "Montreal"
+                        }
+                      ],
+                      required: true
+                    },
+                    {
+                      id: "Sign",
+                      title: "Signed",
+                      type: CustomCollectionFieldType.boolean
+                    }
+                  ],
+                  disabled: false
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyFieldColorPicker('color', {
+                  label: 'Color',
+                  selectedColor: this.properties.color,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  disabled: false,
+                  isHidden: false,
+                  alphaSliderHidden: false,
+                  style: PropertyFieldColorPickerStyle.Full,
+                  iconName: 'Precipitation',
+                  key: 'colorFieldId'
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyFieldDateTimePicker('datetime', {
+                  label: 'Select the date and time',
+                  initialDate: this.properties.datetime,
+                  dateConvention: DateConvention.DateTime,
+                  timeConvention: TimeConvention.Hours24,
+                  onPropertyChange: this.onPropertyPaneFieldChanged,
+                  properties: this.properties,
+                  onGetErrorMessage: null,
+                  deferredValidationTime: 0,
+                  key: 'dateTimeFieldId',
+                  showLabels: false,
+                  firstDayOfWeek: DayOfWeek.Monday
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyFieldMessage("", {
+                  key: "MessageKey",
+                  text: "Something went wrong... try later.",
+                  messageType: MessageBarType.error,
+                  isVisible: true
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyFieldMultiSelect('multiSelect', {
+                  key: 'multiSelect',
+                  label: "Multi select field",
+                  options: [
+                    {
+                      key: "EN",
+                      text: "EN"
+                    },
+                    {
+                      key: "FR",
+                      text: "FR"
+                    },
+                    {
+                      key: "NL",
+                      text: "NL"
+                    }
+                  ],
+                  selectedKeys: this.properties.multiSelect
+                }),
+                PropertyPaneHorizontalRule(),
+                PropertyPaneWebPartInformation({
+                  description: `This is a <strong>demo webpart</strong>, used to demonstrate all the <a href="https://aka.ms/sppnp">PnP</a> property controls`,
+                  moreInfoLink: `https://pnp.github.io/sp-dev-fx-property-controls/`,
+                  videoProperties: {
+                    embedLink: `https://www.youtube.com/embed/d_9o3tQ90zo`,
+                    properties: { allowFullScreen: true}
+                  },
+                  key: 'webPartInfoId'
                 })
               ]
             }

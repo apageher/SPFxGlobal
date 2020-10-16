@@ -58,6 +58,12 @@ declare interface IPersonalPropertyPaneWebPartStrings {
   BtnIconButton: string;
   label: strings;
   ErrorValidationString: string;
+  PnPPropertyControlsDescription: string;
+  HtmlCodeLabel: string;
+  CollectionDataLabel: string;
+  ColorLabel: string;
+  DateTimeLabel: string;
+  MultiSelectLabel: string;
 }
 
 declare module 'PersonalPropertyPaneWebPartStrings' {

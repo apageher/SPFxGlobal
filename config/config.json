@@ -49,6 +49,7 @@
     "MyReactClassComponentWebPartStrings": "lib/webparts/myReactClassComponent/loc/{locale}.js",
     "FluentUiControlsWebPartStrings": "lib/webparts/fluentUiControls/loc/{locale}.js",
     "LazyLoadHookWebPartStrings": "lib/webparts/lazyLoadHook/loc/{locale}.js",
-    "PersonalPropertyPaneWebPartStrings": "lib/webparts/personalPropertyPane/loc/{locale}.js"
+    "PersonalPropertyPaneWebPartStrings": "lib/webparts/personalPropertyPane/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
   }
 }

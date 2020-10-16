@@ -1,3 +1,5 @@
+import { IDateTimeFieldValue } from "@pnp/spfx-property-controls/lib/PropertyFieldDateTimePicker";
+
 export interface IPersonalPropertyPaneProps {
   name: string;
   surname: string;
@@ -10,4 +12,9 @@ export interface IPersonalPropertyPaneProps {
   aboutMe: string;
   layout: string;
   shape: string;
+  htmlCode: string;
+  collectionData: any[];
+  color: string;
+  datetime: IDateTimeFieldValue;
+  multiSelect: string[];
 }
