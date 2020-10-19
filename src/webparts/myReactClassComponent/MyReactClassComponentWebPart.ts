@@ -16,11 +16,16 @@ export interface IMyReactClassComponentWebPartProps {
 
 import { sp } from "@pnp/sp";
 
+import { graph } from "@pnp/graph"; //Para el subcomponente que obtiene info de graph con pnp y no con MSGraphClientFactory
+
 export default class MyReactClassComponentWebPart extends BaseClientSideWebPart<IMyReactClassComponentWebPartProps> {
 
   public onInit(): Promise<void> {
     return super.onInit().then(_ => {
       sp.setup({
+        spfxContext: this.context
+      });
+      graph.setup({
         spfxContext: this.context
       });
     });

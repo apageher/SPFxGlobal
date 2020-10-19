@@ -12,11 +12,14 @@
     "test": "gulp test"
   },
   "dependencies": {
+    "@microsoft/applicationinsights-web": "^2.5.9",
     "@microsoft/sp-core-library": "1.11.0",
     "@microsoft/sp-lodash-subset": "1.11.0",
     "@microsoft/sp-office-ui-fabric-core": "1.11.0",
     "@microsoft/sp-property-pane": "1.11.0",
     "@microsoft/sp-webpart-base": "1.11.0",
+    "@pnp/graph": "^2.0.11",
+    "@pnp/logging": "^2.0.11",
     "@pnp/sp": "^2.0.10",
     "@pnp/spfx-property-controls": "2.0.0",
     "office-ui-fabric-react": "6.214.0",

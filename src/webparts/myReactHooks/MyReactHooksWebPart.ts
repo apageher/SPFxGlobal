@@ -31,7 +31,8 @@ export default class MyReactHooksWebPart extends BaseClientSideWebPart<IMyReactH
       MyReactHooks,
       {
         description: this.properties.description,
-        msGraphClientFactory: this.context.msGraphClientFactory
+        msGraphClientFactory: this.context.msGraphClientFactory,
+        aadHttpClientFactory: this.context.aadHttpClientFactory
       }
     );
     ReactDom.render(element, this.domElement);

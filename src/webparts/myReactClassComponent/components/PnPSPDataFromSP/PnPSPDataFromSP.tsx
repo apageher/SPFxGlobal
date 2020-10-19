@@ -2,11 +2,23 @@ import * as React from 'react';
 import styles from './PnPSPDataFromSP.module.scss';
 import { IPnPSPDataFromSPProps } from './IPnPSPDataFromSPProps';
 import MockDataFromSP from './MockDataFromSP';
-import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
+import { Environment, EnvironmentType, Log } from '@microsoft/sp-core-library';
 import { sp } from "@pnp/sp";
 import "@pnp/sp/webs";
 import "@pnp/sp/lists";
 import "@pnp/sp/items";
+
+import { ConsoleListener, FunctionListener, ILogEntry, Logger, LogLevel } from '@pnp/logging';
+import ApplicationInsightsLoggerListener from '../../../../logging/ApplicationInsightsLoggerListener';
+
+//Function Listener es el otro tipo de listener que proporciona PnP a parte del de Consola
+let listener = new FunctionListener((entry: ILogEntry) => {
+    //En este caso ese FunctionListener hacemos que también pinte en consola
+    console.log(`CUSTOM_LOGGER: ${entry.message}`);
+  });
+//Suscribimos el listener que pinta en consola, listner personalizado que tb pinta en consola y listener que escribe en Application Insigths
+Logger.subscribe(new ConsoleListener(), listener, new ApplicationInsightsLoggerListener);
+Logger.activeLogLevel = LogLevel.Verbose;
 
 export interface ICountry {
     name: string;
@@ -32,6 +44,9 @@ export default class PnPSPDataFromSP extends React.Component<IPnPSPDataFromSPPro
 
     private iniComponent = async () => {
         try {
+
+            Logger.write("En iniComponent");
+
             let data = Array<ICountry>();
             // Local environment
             if (Environment.type === EnvironmentType.Local) {
@@ -41,6 +56,8 @@ export default class PnPSPDataFromSP extends React.Component<IPnPSPDataFromSPPro
                 Environment.type == EnvironmentType.ClassicSharePoint) {
                 data = await this.getData();
             }
+
+            Logger.writeJSON(data, LogLevel.Info);
 
             // SIN DATOS DE MOCK
             // let data = Array<ICountry>();
