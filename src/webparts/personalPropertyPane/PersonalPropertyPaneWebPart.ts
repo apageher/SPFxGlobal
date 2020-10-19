@@ -39,9 +39,6 @@ import PersonalPropertyPane from './components/PersonalPropertyPane';
 import { IPersonalPropertyPaneProps } from './components/IPersonalPropertyPaneProps';
 import { DayOfWeek, MessageBarType } from 'office-ui-fabric-react';
 
-
-
-
 export interface IPersonalPropertyPaneWebPartProps {
   name: string;
   surname: string;

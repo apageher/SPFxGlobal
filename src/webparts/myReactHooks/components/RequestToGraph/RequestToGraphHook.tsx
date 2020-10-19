@@ -3,7 +3,7 @@ import styles from './RequestToGraphHook.module.scss';
 import { IRequestToGraphHookProps } from './IRequestToGraphHookProps';
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import { PrimaryButton } from 'office-ui-fabric-react';
+import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 
 const RequestToGraphHook: React.FC<IRequestToGraphHookProps> = (props) => {
 

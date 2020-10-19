@@ -3,7 +3,7 @@ import styles from './RequestToGraph.module.scss';
 import { IRequestToGraphProps } from './IRequestToGraphProps';
 import { Environment, EnvironmentType } from '@microsoft/sp-core-library';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import { PrimaryButton } from 'office-ui-fabric-react';
+import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 
 export interface IRequestToGraphState {
     name: string;

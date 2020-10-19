@@ -12,6 +12,7 @@ import Tab1 from './Tab1';
 const Tab2 = React.lazy(() => import('./Tab2'));
 const Tab3 = React.lazy(() => import('./Tab3'));
 
+
 const labelStyles: Partial<IStyleSet<ILabelStyles>> = {
   root: { marginTop: 10 },
 };
