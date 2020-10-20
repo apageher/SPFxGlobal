@@ -37,6 +37,8 @@ import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import * as strings from 'PersonalPropertyPaneWebPartStrings';
 import PersonalPropertyPane from './components/PersonalPropertyPane';
 import { IPersonalPropertyPaneProps } from './components/IPersonalPropertyPaneProps';
+// import { DayOfWeek } from 'office-ui-fabric-react/lib/utilities/dateValues/DateValues';
+// import { MessageBarType } from 'office-ui-fabric-react/lib/components/MessageBar';
 import { DayOfWeek, MessageBarType } from 'office-ui-fabric-react';
 
 export interface IPersonalPropertyPaneWebPartProps {
