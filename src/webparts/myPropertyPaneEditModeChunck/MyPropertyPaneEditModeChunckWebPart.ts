@@ -71,7 +71,7 @@ export default class MyPropertyPaneEditModeChunckWebPart extends BaseClientSideW
                 this.propertyFieldNumber('numberValue', {
                   key: "numberValue",
                   label: "Number value only",
-                  value: this.properties.numberValue                  ,
+                  value: this.properties.numberValue,
                   maxValue: 10,
                   minValue: 1,
                   disabled: false
