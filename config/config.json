@@ -65,6 +65,14 @@
           "manifest": "./src/webparts/apiContextReact/ApiContextReactWebPart.manifest.json"
         }
       ]
+    },
+    "pn-p-controls-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/pnPControls/PnPControlsWebPart.js",
+          "manifest": "./src/webparts/pnPControls/PnPControlsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -77,6 +85,8 @@
     "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
     "MyPropertyPaneEditModeChunckWebPartStrings": "lib/webparts/myPropertyPaneEditModeChunck/loc/{locale}.js",
     "SinglePageAppWebPartStrings": "lib/webparts/singlePageApp/loc/{locale}.js",
-    "ApiContextReactWebPartStrings": "lib/webparts/apiContextReact/loc/{locale}.js"
+    "ApiContextReactWebPartStrings": "lib/webparts/apiContextReact/loc/{locale}.js",
+    "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
+    "PnPControlsWebPartStrings": "lib/webparts/pnPControls/loc/{locale}.js"
   }
 }
