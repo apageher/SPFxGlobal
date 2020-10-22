@@ -6,6 +6,9 @@ Short summary on functionality and used technologies.
 
 [picture of the solution in action, if possible]
 
+  APH: 'npm run serve' sustituyendo a 'gulp serve' para hacer debug más rápido al usar el paquete de Sergei Sergeev (https://www.npmjs.com/package/spfx-fast-serve y https://github.com/s-KaiNet/spfx-fast-serve)
+
+
 ## Used SharePoint Framework Version
 
 ![version](https://img.shields.io/badge/version-1.11-green.svg)
@@ -48,7 +51,7 @@ Version|Date|Comments
   - **npm install**
   - **gulp serve**
 
-  APH: 'npm run serve' sustituyendo a 'gulp serve' para hacer debug más rápido al usar el paquete de Sergei Sergeev (https://www.npmjs.com/package/spfx-fast-serve y https://github.com/s-KaiNet/spfx-fast-serve)
+
 
 > Include any additional steps as needed.
 

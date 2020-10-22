@@ -57,6 +57,14 @@
           "manifest": "./src/webparts/singlePageApp/SinglePageAppWebPart.manifest.json"
         }
       ]
+    },
+    "api-context-react-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/apiContextReact/ApiContextReactWebPart.js",
+          "manifest": "./src/webparts/apiContextReact/ApiContextReactWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -68,6 +76,7 @@
     "PersonalPropertyPaneWebPartStrings": "lib/webparts/personalPropertyPane/loc/{locale}.js",
     "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js",
     "MyPropertyPaneEditModeChunckWebPartStrings": "lib/webparts/myPropertyPaneEditModeChunck/loc/{locale}.js",
-    "SinglePageAppWebPartStrings": "lib/webparts/singlePageApp/loc/{locale}.js"
+    "SinglePageAppWebPartStrings": "lib/webparts/singlePageApp/loc/{locale}.js",
+    "ApiContextReactWebPartStrings": "lib/webparts/apiContextReact/loc/{locale}.js"
   }
 }
