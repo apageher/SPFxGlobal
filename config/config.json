@@ -73,6 +73,14 @@
           "manifest": "./src/webparts/pnPControls/PnPControlsWebPart.manifest.json"
         }
       ]
+    },
+    "my-theme-variants-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/myThemeVariants/MyThemeVariantsWebPart.js",
+          "manifest": "./src/webparts/myThemeVariants/MyThemeVariantsWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
@@ -87,6 +95,7 @@
     "SinglePageAppWebPartStrings": "lib/webparts/singlePageApp/loc/{locale}.js",
     "ApiContextReactWebPartStrings": "lib/webparts/apiContextReact/loc/{locale}.js",
     "ControlStrings": "node_modules/@pnp/spfx-controls-react/lib/loc/{locale}.js",
-    "PnPControlsWebPartStrings": "lib/webparts/pnPControls/loc/{locale}.js"
+    "PnPControlsWebPartStrings": "lib/webparts/pnPControls/loc/{locale}.js",
+    "MyThemeVariantsWebPartStrings": "lib/webparts/myThemeVariants/loc/{locale}.js"
   }
 }

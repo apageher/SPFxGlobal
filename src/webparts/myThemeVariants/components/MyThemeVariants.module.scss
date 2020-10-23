@@ -1,0 +1,66 @@
+//@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import '~office-ui-fabric-core/dist/sass/References.scss'; //Cambiado para usar las variables y los mixins que fabric ui (como ms-depth) que no vienen en el anterior
+
+.myThemeVariants {
+  .container {
+    max-width: 700px;
+    margin: 0px auto;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .row {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+    background-color: $ms-color-themeDark;
+    padding: 20px;
+  }
+
+  .row2 {
+    @include ms-Grid-row;
+    @include ms-fontColor-white;
+    padding: 20px;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-lg10;
+    @include ms-xl8;
+    @include ms-xlPush2;
+    @include ms-lgPush1;
+  }
+
+  .title {
+    @include ms-font-xl;
+    @include ms-fontColor-white;
+  }
+
+  .subTitle {
+    @include ms-font-l;
+    @include ms-fontColor-white;
+  }
+
+  .title2 {
+    @include ms-font-xl;
+  }
+
+  .subTitle2 {
+    @include ms-font-l;
+  }
+
+  .myClass1 {
+    background-color: $ms-color-sharedGreenCyan10; // Using variables
+    box-shadow: $ms-depth-shadow-8; // Using variables
+    max-width: 400px;
+    margin: 10px auto;
+  }
+  
+  .myClass2 {
+    @include ms-bgColor-sharedCyan10;// Using mixins
+    @include ms-depth-64; // Using mixins
+    max-width: 400px;
+    margin: 10px auto;
+  }
+
+
+}
