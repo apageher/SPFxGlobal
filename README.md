@@ -14,7 +14,7 @@
 - Petición a MS Graph con PnP
   - Class component: _myReactClassComponent_ > _RequestToGraphWithPnP_
 - Petición a Azure Function:
-- Funtional component: _myReactHooks_ > _RequestToAzureFx_
+  - Funtional component: _myReactHooks_ > _RequestToAzureFx_
 - Distinción del EnvironmentType para traer datos Mock
   - Funtional component: _myReactHooks_ > _PnPSPDataFromSP_
   - Class component: _myReactClassComponent_ > _PnPSPDataFromSP_
