@@ -1,12 +1,37 @@
-# sp-fx-global
+# SPFx-Global
 
 ## Summary
 
-Short summary on functionality and used technologies.
+**Solución de SPFx de varios WebParts con las siguientes funcionalidades:**
 
-[picture of the solution in action, if possible]
+- Funtional components (React Hooks): _myReactHooks_, _pnpControls_ y _lazyLoadHook_ 
+- Obtención de datos de SharePoint con PnP:
+  - Funtional component: _myReactHooks_ > _PnPSPDataFromSP_
+  - Class component: _myReactClassComponent_ > _PnPSPDataFromSP_
+- Petición a MS Graph con ‘msGraphClientFactory’:
+  - Funtional component: _myReactHooks_ > _RequestToGraph_
+  - Class component: _myReactClassComponent_ > _RequestToGraph_
+- Petición a MS Graph con PnP
+  - Class component: _myReactClassComponent_ > _RequestToGraphWithPnP_
+- Petición a Azure Function:
+- Funtional component: _myReactHooks_ > _RequestToAzureFx_
+- Distinción del EnvironmentType para traer datos Mock
+  - Funtional component: _myReactHooks_ > _PnPSPDataFromSP_
+  - Class component: _myReactClassComponent_ > _PnPSPDataFromSP_
+- WP con PropertyPane (Todos los tipos que proporciona SPFx, validaciones, controles condicionales y los de PnP): _personalPropertyPane_
+- Carga de los controles de PnP del PropertyPane solo cuando está en modo edición para mejorar el rendimiento: _myPropertyPaneEditModeChunck_
+- Uso de los ficheros de localización: _personalPropertyPane_
+- Uso del Code Splitting y del Lazy Load para la mejora del rendimiento: _lazyLoadHook_, _pnpControls_, _fluentUIControls_
+- Uso de API Context de React (Paso de información entre componentes): _apiContextReact_
+- Uso de React Route: _singlePageApp_
+- Uso de controles de PnP: _pnpControls_
+- Uso de controles de Fluent UI: _fluentUIControls_
+- Uso de Theme Variants y Fluent ui (mixins @include ms- y variables $ms): _myThemeVariants_
 
-  APH: 'npm run serve' sustituyendo a 'gulp serve' para hacer debug más rápido al usar el paquete de Sergei Sergeev (https://www.npmjs.com/package/spfx-fast-serve y https://github.com/s-KaiNet/spfx-fast-serve)
+y Además:
+- Aplicar mejora de tiempo al hacer el bundle y serve 'spfx-fast-serve' (solución de Sergei Sergeev)
+> 'npm run serve' sustituyendo a 'gulp serve' para hacer debug más rápido al usar el paquete de Sergei Sergeev (https://www.npmjs.com/package/spfx-fast-serve y https://github.com/s-KaiNet/spfx-fast-serve)
+- Uso y prueba para la mejora de rendimiento con 'webpack-bundle-analyzer'
 
 
 ## Used SharePoint Framework Version
@@ -20,15 +45,12 @@ Short summary on functionality and used technologies.
 
 > Get your own free development tenant by subscribing to [Microsoft 365 developer program](http://aka.ms/o365devprogram)
 
-## Prerequisites
-
-> Any special pre-requisites?
 
 ## Solution
 
 Solution|Author(s)
 --------|---------
-folder name | Author details (name, company, twitter alias with link)
+SPFx Global | Alvaro Peich
 
 ## Version history
 
@@ -50,29 +72,3 @@ Version|Date|Comments
 - in the command-line run:
   - **npm install**
   - **gulp serve**
-
-
-
-> Include any additional steps as needed.
-
-## Features
-
-Description of the extension that expands upon high-level summary above.
-
-This extension illustrates the following concepts:
-
-- topic 1
-- topic 2
-- topic 3
-
-> Notice that better pictures and documentation will increase the sample usage and the value you are providing for others. Thanks for your submissions advance.
-
-> Share your web part with others through Microsoft 365 Patterns and Practices program to get visibility and exposure. More details on the community, open-source projects and other activities from http://aka.ms/m365pnp.
-
-## References
-
-- [Getting started with SharePoint Framework](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant)
-- [Building for Microsoft teams](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/build-for-teams-overview)
-- [Use Microsoft Graph in your solution](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/web-parts/get-started/using-microsoft-graph-apis)
-- [Publish SharePoint Framework applications to the Marketplace](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/publish-to-marketplace-overview)
-- [Microsoft 365 Patterns and Practices](https://aka.ms/m365pnp) - Guidance, tooling, samples and open-source controls for your Microsoft 365 development
